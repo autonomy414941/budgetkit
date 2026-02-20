@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BudgetKit - Free Budget, 50/30/20, and Emergency Fund Calculators</title>
+  <meta name="description" content="Use free budget calculators to plan monthly spending, apply the 50/30/20 rule, and estimate emergency fund targets." />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/budgetkit/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BudgetKit - Practical Budget Calculators" />
+  <meta property="og:description" content="Build a realistic monthly plan with three free personal finance calculators." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/budgetkit/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BudgetKit",
+    "url": "https://devtoolbox.dedyn.io/budgetkit/",
+    "description": "Free monthly budget and emergency fund calculators"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a good emergency fund target?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most households aim for 3 to 6 months of essential expenses, and larger variability in income often warrants a bigger buffer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the 50/30/20 rule work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Allocate 50% of net income to needs, 30% to wants, and 20% to savings or debt payoff, then adjust by your real fixed costs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I budget with gross or net income?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use net take-home income for monthly budgeting because it reflects what you can actually spend and save."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">Free Personal Finance Tools</p>
+      <h1>BudgetKit</h1>
+      <p class="hero-copy">
+        Build a practical monthly plan in minutes. Start with your real numbers,
+        then check your spending mix and emergency fund runway.
+      </p>
+      <nav class="quick-links" aria-label="Calculator links">
+        <a href="#monthly-budget">Monthly Budget</a>
+        <a href="#rule-503020">50/30/20 Planner</a>
+        <a href="#emergency-fund">Emergency Fund</a>
+      </nav>
+    </header>
+
+    <section id="monthly-budget" class="card">
+      <h2>Monthly Budget Calculator</h2>
+      <p>See how much money remains after planned spending and savings.</p>
+      <form id="budget-form" class="form-grid" novalidate>
+        <label>
+          Net Monthly Income
+          <input type="number" min="0" step="0.01" id="income" required value="4500" />
+        </label>
+        <label>
+          Fixed Expenses (rent, bills)
+          <input type="number" min="0" step="0.01" id="fixed" required value="2100" />
+        </label>
+        <label>
+          Variable Expenses (food, transport)
+          <input type="number" min="0" step="0.01" id="variable" required value="1200" />
+        </label>
+        <label>
+          Planned Savings / Debt Payoff
+          <input type="number" min="0" step="0.01" id="saving" required value="700" />
+        </label>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="budget-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section id="rule-503020" class="card">
+      <h2>50/30/20 Budget Planner</h2>
+      <p>Quick target split from your take-home pay.</p>
+      <form id="split-form" class="form-grid" novalidate>
+        <label>
+          Net Monthly Income
+          <input type="number" min="0" step="0.01" id="split-income" required value="4500" />
+        </label>
+        <button type="submit">Generate Targets</button>
+      </form>
+      <div id="split-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section id="emergency-fund" class="card">
+      <h2>Emergency Fund Calculator</h2>
+      <p>Estimate your target and timeline based on essential expenses.</p>
+      <form id="fund-form" class="form-grid" novalidate>
+        <label>
+          Essential Monthly Expenses
+          <input type="number" min="0" step="0.01" id="essential" required value="2500" />
+        </label>
+        <label>
+          Target Months of Coverage
+          <input type="number" min="1" max="24" step="1" id="months" required value="6" />
+        </label>
+        <label>
+          Current Emergency Savings
+          <input type="number" min="0" step="0.01" id="current-fund" required value="4000" />
+        </label>
+        <label>
+          Monthly Contribution
+          <input type="number" min="0" step="0.01" id="contribution" required value="500" />
+        </label>
+        <button type="submit">Estimate Timeline</button>
+      </form>
+      <div id="fund-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="card faq" id="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>What emergency fund size should I use?</summary>
+        <p>Start with 3 months of essentials, then move toward 6+ if income is variable or single-source.</p>
+      </details>
+      <details>
+        <summary>Can I use this for debt payoff planning?</summary>
+        <p>Yes. Add your extra debt payment inside the savings/debt field in the monthly budget section.</p>
+      </details>
+      <details>
+        <summary>Why are my 50/30/20 numbers hard to match?</summary>
+        <p>High housing costs often push needs above 50%. Use the split as a target, then iterate gradually.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>BudgetKit on DevToolbox • <a href="https://devtoolbox.dedyn.io/">Main site</a></p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
