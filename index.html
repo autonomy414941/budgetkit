@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BudgetKit - Free Budget, 50/30/20, and Emergency Fund Calculators</title>
   <meta name="description" content="Use free budget calculators to plan monthly spending, apply the 50/30/20 rule, and estimate emergency fund targets." />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://devtoolbox.dedyn.io/budgetkit/" />
+  <link rel="sitemap" type="application/xml" title="BudgetKit Sitemap" href="https://devtoolbox.dedyn.io/budgetkit/sitemap.xml" />
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BudgetKit" />
   <meta property="og:title" content="BudgetKit - Practical Budget Calculators" />
-  <meta property="og:description" content="Build a realistic monthly plan with three free personal finance calculators." />
+  <meta property="og:description" content="Build a realistic monthly plan with free budget, 50/30/20, and emergency fund calculators." />
   <meta property="og:url" content="https://devtoolbox.dedyn.io/budgetkit/" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BudgetKit - Practical Budget Calculators" />
+  <meta name="twitter:description" content="Plan monthly spending and emergency savings with free browser-based calculators." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
@@ -22,6 +29,33 @@
     "name": "BudgetKit",
     "url": "https://devtoolbox.dedyn.io/budgetkit/",
     "description": "Free monthly budget and emergency fund calculators"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "BudgetKit Calculators",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Monthly Budget Calculator",
+        "url": "https://devtoolbox.dedyn.io/budgetkit/monthly-budget-calculator.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "50/30/20 Budget Calculator",
+        "url": "https://devtoolbox.dedyn.io/budgetkit/50-30-20-budget-calculator.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Emergency Fund Calculator",
+        "url": "https://devtoolbox.dedyn.io/budgetkit/emergency-fund-calculator.html"
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -69,10 +103,10 @@
         Build a practical monthly plan in minutes. Start with your real numbers,
         then check your spending mix and emergency fund runway.
       </p>
-      <nav class="quick-links" aria-label="Calculator links">
-        <a href="#monthly-budget">Monthly Budget</a>
-        <a href="#rule-503020">50/30/20 Planner</a>
-        <a href="#emergency-fund">Emergency Fund</a>
+      <nav class="quick-links" aria-label="Calculator pages">
+        <a href="./monthly-budget-calculator.html">Monthly Budget Calculator</a>
+        <a href="./50-30-20-budget-calculator.html">50/30/20 Calculator</a>
+        <a href="./emergency-fund-calculator.html">Emergency Fund Calculator</a>
       </nav>
     </header>
 
@@ -99,6 +133,7 @@
         <button type="submit">Calculate</button>
       </form>
       <div id="budget-result" class="result" aria-live="polite"></div>
+      <p>Need a focused page? <a href="./monthly-budget-calculator.html">Open the monthly budget calculator</a>.</p>
     </section>
 
     <section id="rule-503020" class="card">
@@ -112,6 +147,7 @@
         <button type="submit">Generate Targets</button>
       </form>
       <div id="split-result" class="result" aria-live="polite"></div>
+      <p>Need a focused page? <a href="./50-30-20-budget-calculator.html">Open the 50/30/20 calculator</a>.</p>
     </section>
 
     <section id="emergency-fund" class="card">
@@ -137,6 +173,7 @@
         <button type="submit">Estimate Timeline</button>
       </form>
       <div id="fund-result" class="result" aria-live="polite"></div>
+      <p>Need a focused page? <a href="./emergency-fund-calculator.html">Open the emergency fund calculator</a>.</p>
     </section>
 
     <section class="card faq" id="faq">
@@ -157,9 +194,9 @@
   </main>
 
   <footer class="footer">
-    <p>BudgetKit on DevToolbox • <a href="https://devtoolbox.dedyn.io/">Main site</a></p>
+    <p>BudgetKit on DevToolbox • <a href="https://devtoolbox.dedyn.io/">Main site</a> • <a href="https://devtoolbox.dedyn.io/datekit/">DateKit</a></p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>50/30/20 Budget Calculator - BudgetKit</title>
+  <meta name="description" content="Free 50/30/20 budget calculator to split take-home pay into needs, wants, and savings targets." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/budgetkit/50-30-20-budget-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BudgetKit" />
+  <meta property="og:title" content="50/30/20 Budget Calculator - BudgetKit" />
+  <meta property="og:description" content="Generate quick 50/30/20 targets from your monthly take-home income." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/budgetkit/50-30-20-budget-calculator.html" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="50/30/20 Budget Calculator - BudgetKit" />
+  <meta name="twitter:description" content="Split income into needs, wants, and savings in seconds." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">BudgetKit</p>
+      <h1>50/30/20 Budget Calculator</h1>
+      <p class="hero-copy">Generate a simple allocation baseline for needs, wants, and savings/debt payoff.</p>
+      <nav class="quick-links" aria-label="BudgetKit calculators">
+        <a href="./">All BudgetKit Tools</a>
+        <a href="./monthly-budget-calculator.html">Monthly Budget Calculator</a>
+        <a href="./emergency-fund-calculator.html">Emergency Fund Calculator</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>50/30/20 Budget Planner</h2>
+      <p>Start with a clean split, then adjust based on rent, debt load, and savings goals.</p>
+      <form id="split-form" class="form-grid" novalidate>
+        <label>
+          Net Monthly Income
+          <input type="number" min="0" step="0.01" id="split-income" required value="4500" />
+        </label>
+        <button type="submit">Generate Targets</button>
+      </form>
+      <div id="split-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="card faq">
+      <h2>When To Adjust The Rule</h2>
+      <p>If fixed costs exceed 50% today, use this as a target trajectory rather than a strict pass/fail score.</p>
+      <p>High-interest debt can justify pushing savings/debt above 20% temporarily.</p>
+      <p>Recalculate after raises, rent changes, or debt payoffs to keep the split realistic.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>BudgetKit • <a href="https://devtoolbox.dedyn.io/">DevToolbox</a> • <a href="./">All calculators</a></p>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "50/30/20 Budget Calculator",
+    "url": "https://devtoolbox.dedyn.io/budgetkit/50-30-20-budget-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate monthly 50/30/20 budget targets from take-home income.",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script src="app.js" defer></script>
+</body>
+</html>

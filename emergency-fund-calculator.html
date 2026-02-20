@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Fund Calculator - BudgetKit</title>
+  <meta name="description" content="Free emergency fund calculator to estimate target savings and months to goal based on your contribution pace." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://devtoolbox.dedyn.io/budgetkit/emergency-fund-calculator.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BudgetKit" />
+  <meta property="og:title" content="Emergency Fund Calculator - BudgetKit" />
+  <meta property="og:description" content="Estimate emergency savings target and timeline from essential expenses and monthly contributions." />
+  <meta property="og:url" content="https://devtoolbox.dedyn.io/budgetkit/emergency-fund-calculator.html" />
+  <meta property="og:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emergency Fund Calculator - BudgetKit" />
+  <meta name="twitter:description" content="Project your emergency fund target and time-to-goal." />
+  <meta name="twitter:image" content="https://devtoolbox.dedyn.io/og/default.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+  <div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">BudgetKit</p>
+      <h1>Emergency Fund Calculator</h1>
+      <p class="hero-copy">Estimate target savings and timeline so your cash buffer can absorb income and expense shocks.</p>
+      <nav class="quick-links" aria-label="BudgetKit calculators">
+        <a href="./">All BudgetKit Tools</a>
+        <a href="./monthly-budget-calculator.html">Monthly Budget Calculator</a>
+        <a href="./50-30-20-budget-calculator.html">50/30/20 Calculator</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <h2>Emergency Fund Planner</h2>
+      <p>Set essentials, target months of coverage, current balance, and monthly contribution to project your runway.</p>
+      <form id="fund-form" class="form-grid" novalidate>
+        <label>
+          Essential Monthly Expenses
+          <input type="number" min="0" step="0.01" id="essential" required value="2500" />
+        </label>
+        <label>
+          Target Months of Coverage
+          <input type="number" min="1" max="24" step="1" id="months" required value="6" />
+        </label>
+        <label>
+          Current Emergency Savings
+          <input type="number" min="0" step="0.01" id="current-fund" required value="4000" />
+        </label>
+        <label>
+          Monthly Contribution
+          <input type="number" min="0" step="0.01" id="contribution" required value="500" />
+        </label>
+        <button type="submit">Estimate Timeline</button>
+      </form>
+      <div id="fund-result" class="result" aria-live="polite"></div>
+    </section>
+
+    <section class="card faq">
+      <h2>Emergency Fund Notes</h2>
+      <p>A 3-month target is a common starting point. Households with variable income often aim for 6+ months.</p>
+      <p>Use essential expenses only when setting the target so the number remains realistic under stress.</p>
+      <p>If your contribution is $0, focus first on freeing recurring cash flow in your monthly budget.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>BudgetKit • <a href="https://devtoolbox.dedyn.io/">DevToolbox</a> • <a href="./">All calculators</a></p>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Emergency Fund Calculator",
+    "url": "https://devtoolbox.dedyn.io/budgetkit/emergency-fund-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "description": "Calculate emergency fund target and estimated months to goal.",
+    "isAccessibleForFree": true
+  }
+  </script>
+  <script src="app.js" defer></script>
+</body>
+</html>

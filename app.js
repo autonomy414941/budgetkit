@@ -8,12 +8,20 @@ function toMoney(value) {
 
 function numberFromInput(id) {
   const input = document.getElementById(id);
+  if (!input) {
+    return NaN;
+  }
+
   const value = Number(input.value);
   return Number.isFinite(value) && value >= 0 ? value : NaN;
 }
 
 function renderList(targetId, rows, variant) {
   const target = document.getElementById(targetId);
+  if (!target) {
+    return;
+  }
+
   const items = rows
     .map(
       ([label, value]) =>
@@ -25,18 +33,24 @@ function renderList(targetId, rows, variant) {
   target.innerHTML = `<ul class="result-list">${items}</ul>`;
 }
 
-document.getElementById("budget-form").addEventListener("submit", (event) => {
-  event.preventDefault();
+function showError(targetId, message) {
+  const target = document.getElementById(targetId);
+  if (!target) {
+    return;
+  }
 
+  target.className = "result warn";
+  target.textContent = message;
+}
+
+function runBudgetCalculator() {
   const income = numberFromInput("income");
   const fixed = numberFromInput("fixed");
   const variable = numberFromInput("variable");
   const saving = numberFromInput("saving");
 
   if ([income, fixed, variable, saving].some(Number.isNaN)) {
-    const result = document.getElementById("budget-result");
-    result.className = "result warn";
-    result.textContent = "Please enter valid non-negative numbers.";
+    showError("budget-result", "Please enter valid non-negative numbers.");
     return;
   }
 
@@ -57,16 +71,12 @@ document.getElementById("budget-form").addEventListener("submit", (event) => {
     ],
     remaining >= 0 ? "ok" : "warn",
   );
-});
+}
 
-document.getElementById("split-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-
+function runSplitCalculator() {
   const income = numberFromInput("split-income");
   if (Number.isNaN(income)) {
-    const result = document.getElementById("split-result");
-    result.className = "result warn";
-    result.textContent = "Please enter a valid non-negative income.";
+    showError("split-result", "Please enter a valid non-negative income.");
     return;
   }
 
@@ -79,20 +89,19 @@ document.getElementById("split-form").addEventListener("submit", (event) => {
     ],
     "ok",
   );
-});
+}
 
-document.getElementById("fund-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-
+function runFundCalculator() {
   const essential = numberFromInput("essential");
   const months = numberFromInput("months");
   const currentFund = numberFromInput("current-fund");
   const contribution = numberFromInput("contribution");
 
   if ([essential, months, currentFund, contribution].some(Number.isNaN) || months < 1) {
-    const result = document.getElementById("fund-result");
-    result.className = "result warn";
-    result.textContent = "Please enter valid values. Target months must be at least 1.";
+    showError(
+      "fund-result",
+      "Please enter valid values. Target months must be at least 1.",
+    );
     return;
   }
 
@@ -114,9 +123,50 @@ document.getElementById("fund-form").addEventListener("submit", (event) => {
     ],
     gap === 0 ? "ok" : contribution > 0 ? "ok" : "warn",
   );
-});
+}
 
-// Render initial values for faster first interaction.
-document.getElementById("budget-form").dispatchEvent(new Event("submit"));
-document.getElementById("split-form").dispatchEvent(new Event("submit"));
-document.getElementById("fund-form").dispatchEvent(new Event("submit"));
+function initBudgetCalculator() {
+  const form = document.getElementById("budget-form");
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    runBudgetCalculator();
+  });
+
+  runBudgetCalculator();
+}
+
+function initSplitCalculator() {
+  const form = document.getElementById("split-form");
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    runSplitCalculator();
+  });
+
+  runSplitCalculator();
+}
+
+function initFundCalculator() {
+  const form = document.getElementById("fund-form");
+  if (!form) {
+    return;
+  }
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    runFundCalculator();
+  });
+
+  runFundCalculator();
+}
+
+initBudgetCalculator();
+initSplitCalculator();
+initFundCalculator();
