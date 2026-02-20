@@ -64,10 +64,20 @@
     </section>
 
     <section class="card faq">
-      <h2>How To Use This</h2>
-      <p>Enter take-home income, not gross salary, so the result reflects cash available this month.</p>
-      <p>If the remaining value is negative, reduce variable spend first, then revisit fixed costs and debt pace.</p>
-      <p>Re-run each month to keep your baseline current as bills and contributions change.</p>
+      <h2>FAQ</h2>
+      <details>
+        <summary>Should I use gross or net income?</summary>
+        <p>Use net take-home income so the result reflects cash you can actually spend or save this month.</p>
+      </details>
+      <details>
+        <summary>What if my remaining value is negative?</summary>
+        <p>Reduce variable spending first, then revisit fixed-cost commitments and savings/debt targets.</p>
+      </details>
+      <details>
+        <summary>How often should I update my numbers?</summary>
+        <p>Update monthly or whenever pay, rent, or debt payments change to keep the plan realistic.</p>
+      </details>
+      <p>Need a target split baseline? Open the <a href="./50-30-20-budget-calculator.html">50/30/20 calculator</a>.</p>
     </section>
   </main>
 
@@ -85,6 +95,58 @@
     "operatingSystem": "Web",
     "description": "Calculate monthly remaining cash after fixed, variable, and savings allocations.",
     "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "BudgetKit",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Monthly Budget Calculator",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/monthly-budget-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Should I use gross or net income?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use net take-home income so the result matches what you can actually spend and save."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my remaining value is negative?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cut variable spending first, then review fixed costs and savings/debt targets."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I update my numbers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Refresh your inputs monthly or after major income and expense changes."
+        }
+      }
+    ]
   }
   </script>
   <script src="app.js" defer></script>

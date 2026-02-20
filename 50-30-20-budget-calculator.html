@@ -52,10 +52,20 @@
     </section>
 
     <section class="card faq">
-      <h2>When To Adjust The Rule</h2>
-      <p>If fixed costs exceed 50% today, use this as a target trajectory rather than a strict pass/fail score.</p>
-      <p>High-interest debt can justify pushing savings/debt above 20% temporarily.</p>
-      <p>Recalculate after raises, rent changes, or debt payoffs to keep the split realistic.</p>
+      <h2>FAQ</h2>
+      <details>
+        <summary>What if my needs are above 50%?</summary>
+        <p>Treat 50/30/20 as a direction, not a strict pass/fail. Reduce fixed costs gradually when possible.</p>
+      </details>
+      <details>
+        <summary>Can I put debt payoff in the 20% bucket?</summary>
+        <p>Yes. Savings and extra debt payoff usually share the same allocation bucket in this framework.</p>
+      </details>
+      <details>
+        <summary>When should I recalculate?</summary>
+        <p>Re-run after raises, rent changes, debt payoff milestones, or major recurring-expense updates.</p>
+      </details>
+      <p>Need to verify cash flow against real expenses? Use the <a href="./monthly-budget-calculator.html">Monthly Budget Calculator</a>.</p>
     </section>
   </main>
 
@@ -73,6 +83,58 @@
     "operatingSystem": "Web",
     "description": "Calculate monthly 50/30/20 budget targets from take-home income.",
     "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "BudgetKit",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "50/30/20 Budget Calculator",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/50-30-20-budget-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What if my needs are above 50%?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Treat 50/30/20 as a direction instead of a strict pass/fail benchmark and reduce fixed costs gradually."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I put debt payoff in the 20% bucket?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Savings and extra debt payoff typically share the 20% bucket."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When should I recalculate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Recalculate after income changes, rent changes, debt payoff milestones, or major recurring-expense shifts."
+        }
+      }
+    ]
   }
   </script>
   <script src="app.js" defer></script>

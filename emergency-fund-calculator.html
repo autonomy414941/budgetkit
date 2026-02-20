@@ -64,10 +64,20 @@
     </section>
 
     <section class="card faq">
-      <h2>Emergency Fund Notes</h2>
-      <p>A 3-month target is a common starting point. Households with variable income often aim for 6+ months.</p>
-      <p>Use essential expenses only when setting the target so the number remains realistic under stress.</p>
-      <p>If your contribution is $0, focus first on freeing recurring cash flow in your monthly budget.</p>
+      <h2>FAQ</h2>
+      <details>
+        <summary>How many months of expenses should I target?</summary>
+        <p>Three months is a common starting point; variable income or single-earner households often target six or more months.</p>
+      </details>
+      <details>
+        <summary>Should I use total spending or essentials only?</summary>
+        <p>Use essential monthly expenses to set a realistic emergency baseline for worst-case periods.</p>
+      </details>
+      <details>
+        <summary>What if I cannot contribute monthly yet?</summary>
+        <p>Start by freeing recurring cash flow in your monthly budget, then restart with a smaller contribution target.</p>
+      </details>
+      <p>Need to free up monthly cash first? Use the <a href="./monthly-budget-calculator.html">Monthly Budget Calculator</a>.</p>
     </section>
   </main>
 
@@ -85,6 +95,58 @@
     "operatingSystem": "Web",
     "description": "Calculate emergency fund target and estimated months to goal.",
     "isAccessibleForFree": true
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "BudgetKit",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Emergency Fund Calculator",
+        "item": "https://devtoolbox.dedyn.io/budgetkit/emergency-fund-calculator.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many months of expenses should I target?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Three months is a common baseline, while variable-income households often aim for six or more months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should I use total spending or essentials only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use essential monthly expenses to keep the emergency target realistic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I cannot contribute monthly yet?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Free recurring cash flow in your monthly budget first, then restart with a smaller contribution amount."
+        }
+      }
+    ]
   }
   </script>
   <script src="app.js" defer></script>
